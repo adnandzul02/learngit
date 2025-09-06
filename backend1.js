@@ -23,6 +23,12 @@ app.post("/api/echo", (req, res) => {
   res.json({ you_sent: data });
 });
 
+// Route baru: kasih waktu server sekarang
+app.get("/api/time", (req, res) => {
+  const now = new Date();
+  res.json({ server_time: now.toISOString() });
+});
+
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
