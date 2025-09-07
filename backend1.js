@@ -29,6 +29,12 @@ app.get("/api/time", (req, res) => {
   res.json({ server_time: now.toISOString() });
 });
 
+// Route baru: kasih angka random 1–100
+app.get("/api/random", (req, res) => {
+  const randomNumber = Math.floor(Math.random() * 100) + 1;
+  res.json({ random_number: randomNumber });
+});
+
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
